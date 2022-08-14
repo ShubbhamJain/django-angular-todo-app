@@ -1,0 +1,11 @@
+<div [ngClass]="{completed: todo.completed, notCompleted: !todo.completed}" class="task" (dblclick)="onToggle(todo)">
+    <h3>
+        {{todo.taskName}}
+        <div class="icons">
+            <fa-icon [ngStyle]="{'color': 'dimgray'}" [icon]="faPenToSquare" (click)="onEdit(todo)"></fa-icon>
+            <fa-icon [ngStyle]="{'color': 'red'}" [icon]="faTimes" (click)="onDelete(todo)"></fa-icon>
+        </div>
+    </h3>
+    <p>{{todo.taskDescription}}</p>
+    <p [ngStyle]="{'fontSize': '12px'}">Created: {{todo.created}}</p>
+</div>

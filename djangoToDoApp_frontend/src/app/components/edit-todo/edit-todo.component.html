@@ -1,0 +1,21 @@
+<form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="taskName" style="display: flex">
+            To Do
+            <fa-icon [ngStyle]="{'color': 'red', 'fontSize': '8px', 'padding': '3px 0px 0px 3px'}"
+                [icon]="faStarOfLife">
+            </fa-icon>
+        </label>
+
+        <input type="text" [(ngModel)]="taskName" name="taskName" id="taskName" [defaultValue]="todo.taskName" />
+    </div>
+
+    <div class="form-control">
+        <label for="taskDescription">To Do Description</label>
+        <input type="text" [(ngModel)]="taskDescription" name="taskDescription" id="taskDescription"
+            placeholder="Add To Do Description" />
+    </div>
+
+    <input type="submit" value="Edit" class="btn btn-block">
+    <input type="button" value="Cancel" class="btn btn-block cancel" (click)="closeEdit()">
+</form>

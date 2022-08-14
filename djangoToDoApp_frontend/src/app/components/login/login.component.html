@@ -1,0 +1,26 @@
+<header>
+    <h1 style="text-align: center;">{{title}}</h1>
+
+    <form class="add-form" (ngSubmit)="onSubmit()" [formGroup]="loginForm" novalidate>
+        <div class="form-control">
+            <label for="email" style="display: flex">Email</label>
+            <input type="email" formControlName="email" name="email" id="email" placeholder="Enter Email..." email />
+            <p class="form-error" *ngIf="loginForm.controls['email'].errors?.['email']">
+                {{ displayMessage.email }}
+            </p>
+        </div>
+
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" name="password" id="password" placeholder="********"
+                autocomplete="on" />
+            <p *ngIf="loginForm.controls['password'].errors?.['minlength']" class="form-error">
+                {{ displayMessage.password }}
+            </p>
+        </div>
+
+        <input type="submit" value="Register" class="btn btn-block" [disabled]="loginForm.invalid">
+    </form>
+
+    <p class="registerLink">Don't have an Account ? <a routerLink="/register">Register</a></p>
+</header>

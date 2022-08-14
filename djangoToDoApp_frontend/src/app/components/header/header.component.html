@@ -1,0 +1,5 @@
+<header>
+    <h1>{{title}}</h1>
+    <app-button *ngIf="!showEditTask" color="{{showAddTask ? 'red' : 'green'}}"
+        text="{{showAddTask ? 'Cancel' : 'Add'}}" (btnClick)="toggleAddTask()"></app-button>
+</header>

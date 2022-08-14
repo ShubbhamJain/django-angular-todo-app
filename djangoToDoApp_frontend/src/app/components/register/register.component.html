@@ -1,0 +1,46 @@
+<header>
+    <h1 style="text-align: center;">{{title}}</h1>
+
+    <form class="add-form" (ngSubmit)="onSubmit()" [formGroup]="registerForm" novalidate>
+        <div class="form-control">
+            <label for="username" style="display: flex">User Name</label>
+            <input type="text" formControlName="username" name="username" id="username"
+                placeholder="Enter Username..." />
+            <p class="form-error"
+                *ngIf="!registerForm.controls['username'].pristine && registerForm.controls['username'].errors?.['required']">
+                {{ displayMessage.username }}
+            </p>
+        </div>
+
+        <div class="form-control">
+            <label for="email" style="display: flex">Email</label>
+            <input type="email" formControlName="email" name="email" id="email" placeholder="Enter Email..." email />
+            <p class="form-error" *ngIf="registerForm.controls['email'].errors?.['email']">
+                {{ displayMessage.email }}
+            </p>
+        </div>
+
+        <div class="form-control">
+            <label for="password1">Password</label>
+            <input type="password" formControlName="password1" name="password1" id="password1" placeholder="********"
+                autocomplete="on" />
+            <p *ngIf="registerForm.controls['password1'].errors?.['minlength']" class="form-error">
+                {{ displayMessage.password1 }}
+            </p>
+        </div>
+
+        <div class="form-control">
+            <label for="password2">Confirm Password</label>
+            <input type="password" formControlName="password2" name="password2" id="password2" placeholder="********"
+                autocomplete="on" />
+            <p *ngIf="registerForm.controls['password2'].errors?.['minlength'] || registerForm.controls['password2'].errors?.['notmatched']"
+                class="form-error">
+                {{ displayMessage.password2 }}
+            </p>
+        </div>
+
+        <input type="submit" value="Register" class="btn btn-block" [disabled]="registerForm.invalid">
+    </form>
+
+    <p class="loginLink">Already have an Account ? <a routerLink="/login">Login</a></p>
+</header>

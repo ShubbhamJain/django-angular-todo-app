@@ -1,0 +1,6 @@
+Django==4.0
+django-cors-headers==3.12.0
+djangorestframework==3.13.1
+gunicorn==20.1.0
+django_on_heroku
+dj-database-url

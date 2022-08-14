@@ -1,0 +1,22 @@
+<a (click)="logout()" style="cursor: pointer">Logout</a>
+<br>
+<app-header></app-header>
+
+<app-add-todo *ngIf="!showTaskItem" (onAddTask)="addTask($event)"></app-add-todo>
+
+<h5 style="text-align: center; margin-bottom: 14px;" *ngIf="(todos.length===0)">
+    No todos to show.
+</h5>
+
+<div *ngIf="!showTaskItem">
+    <div *ngIf="(todos.length>0)">
+        <h5 style="text-align: center; margin-bottom: 14px;">*Double Click To Do to mark complete.*</h5>
+        <app-todo-item *ngFor="let todo of todos" [todo]="todo" (onToggleToDo)="toggleTodo(todo)"
+            (onDeleteToDo)="deleteTodo(todo)">
+        </app-todo-item>
+    </div>
+</div>
+
+<app-edit-todo *ngIf="showTaskItem" [todo]="todoToEdit" (onEditTask)="editToDo($event)"></app-edit-todo>
+
+<app-footer></app-footer>
