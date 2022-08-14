@@ -6,7 +6,6 @@
 - [Features](#features)
 - [Application Demo](#application-demo)
 - [Technologies](#technologies)
-- [Setup](#setup)
 
 ### Introduction
 
@@ -36,25 +35,3 @@ Project is created with:
 - Django
 - Python
 - Sqlite
-
-### Setup
-
-To run the project, follow the steps-
-
-- Clone the Repo-
-
-```
-$ git clone [repo Url]
-```
-
-- Once done, run the app-
-
-```
-$ yarn start
-```
-
-- Create build-
-
-```
-$ yarn build
-```
