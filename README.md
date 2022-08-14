@@ -4,7 +4,6 @@
 
 - [Intoduction](#introduction)
 - [Features](#features)
-- [Application Demo](#application-demo)
 - [Technologies](#technologies)
 
 ### Introduction
@@ -19,11 +18,6 @@ Project uses Angular to build the frontend and django to build the backend for a
 4. Task editing
 5. Marking complete
 6. Deleteing task
-
-### Application Demo
-
-The app is deployed on heroku. The link to the site is-
-Todo-Todo
 
 ### Technologies
 
